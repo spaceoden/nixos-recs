@@ -5,6 +5,13 @@
   security.sudo.enable = false;
   security.sudo-rs.enable = true;
 
+  #wayland envars
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+
 # below are selections from nixos-hardened which don't break things i need
 # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/profiles/hardened.nix 
 
