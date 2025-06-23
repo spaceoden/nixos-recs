@@ -12,6 +12,21 @@
     MOZ_ENABLE_WAYLAND = "1";
   };
 
+  #automatically deploy updates
+  system.autoUpgrade = {
+    enable = true;
+    randomizedDelaySec = "600"; #adds 0-10 minutes to trigger time to stagger updates
+    operation = "boot";
+  };
+
+  #clean up old deployments
+  nix.optimise.automatic = true;
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 7d";
+  };
+
 # below are selections from nixos-hardened which don't break things i need
 # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/profiles/hardened.nix 
 
