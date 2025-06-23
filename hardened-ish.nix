@@ -1,6 +1,12 @@
 { config, ... }:
 {
 
+  #randomize MAC
+  networking.networkmanager = {
+    ethernet.macAddress = "stable";
+    wifi.macAddress = "random";
+  };
+
   #sudo-rs
   security.sudo.enable = false;
   security.sudo-rs.enable = true;
