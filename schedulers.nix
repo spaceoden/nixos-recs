@@ -4,7 +4,6 @@
   #io-scheduler
   hardware.block.defaultScheduler = "kyber";
   hardware.block.defaultSchedulerRotational = "bfq";
-  #this takes precedence over above defaultScheduler
   hardware.block.scheduler = {
     "mmcblk[0-9]*" = "bfq";
   };
