@@ -11,7 +11,6 @@
   #lavd autopower scheduler
   services.scx = {
     enable = true;
-    extraArgs = [ "--autopower" ];
     package = pkgs.scx.rustscheds;
     scheduler = "scx_lavd";
   };
