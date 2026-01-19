@@ -8,7 +8,7 @@
     "mmcblk[0-9]*" = "bfq";
   };
 
-  #lavd autopower scheduler
+  #lavd scheduler
   services.scx = {
     enable = true;
     package = pkgs.scx.rustscheds;
