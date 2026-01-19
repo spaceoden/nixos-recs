@@ -1,9 +1,11 @@
 {
 
-  zramSwap = {
+  services.zram-generator = {
     enable = true;
-    algorithm = "lz4";
-    memoryPercent = 63;
+    settings = {
+      zram-size = "min(ram / 2, 8192)";
+      compression-algorithm = "lz4";
+    };
   };
 
   boot.kernel.sysctl = {
