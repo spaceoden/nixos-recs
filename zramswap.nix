@@ -1,11 +1,8 @@
 {
 
-  services.zram-generator = {
+  zramSwap = {
     enable = true;
-    settings = {
-      zram-size = "min(ram / 2, 8192)";
-      compression-algorithm = "lz4";
-    };
+    memoryMax = 17179869184;
   };
 
   boot.kernel.sysctl = {
