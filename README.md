@@ -2,7 +2,7 @@ Settings I recommend for most NixOS systems.
 
 hardening.nix sets various settings to harden the system, with limited impact on compatibility.
 
-rfc-7844.nix sets RFC 7844 recommendations for DHCP anonymization, including stable MAC address randomization.
+dhcp-anon.nix enable RFC 4941 IPv6 privacy exensions and sets RFC 7844 recommendations for DHCP anonymization, including stable MAC address randomization.
 
 schedulers.nix sets CPU and IO schedulers tuned for optimal interactive workstation performance. Switch from `bpfland` to `lavd` for optimal gaming performance.
 
