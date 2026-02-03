@@ -8,11 +8,11 @@
     "mmcblk[0-9]*" = "bfq";
   };
 
-  #lavd scheduler
+  #bpfland scheduler
   services.scx = {
     enable = true;
     package = pkgs.scx.rustscheds;
-    scheduler = "scx_lavd";
+    scheduler = "scx_bpfland";
   };
 
 }
