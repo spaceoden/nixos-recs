@@ -4,7 +4,7 @@
   #IO schedulers
   hardware.block.defaultScheduler = "bfq";
   hardware.block.scheduler = {
-    "nvme[0-9]*" = "kyber";
+    "nvme[0-9]*" = "kyber"; # "none" is better on high end NVME drives
   };
 
   #bpfland scheduler
