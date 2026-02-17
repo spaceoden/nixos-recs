@@ -15,16 +15,25 @@
   #automatically deploy updates
   system.autoUpgrade = {
     enable = true;
-    randomizedDelaySec = "600"; #adds 0-10 minutes to trigger time to stagger updates
+    randomizedDelaySec = "20min"; #adds 0-20 minutes to trigger time to stagger updates and so it doesn't run right at boot when overdue
     operation = "boot"; #deploys update as new boot entry. use the default setting of "switch" for immediate effect.
   };
 
   #clean up old deployments
-  nix.optimise.automatic = true;
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
+  nix = {
+    optimise = {
+      automatic = true;
+      randomizedDelaySec = "10min"; #adds 0-10 minutes to trigger time, so it doesn't run right at boot when overdue
+    };
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 14d";
+      randomizedDelaySec = "10min"; #adds 0-10 minutes to trigger time, so it doesn't run right at boot when overdue
+    };
+    extraOptions = ''
+      min-free = ${toString (100 * 1024 * 1024)}
+      max-free = ${toString (1024 * 1024 * 1024)}
+    '';
   };
 
 # below are selections from nixos-hardened which don't break things i need
