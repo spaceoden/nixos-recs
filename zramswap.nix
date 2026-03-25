@@ -12,4 +12,6 @@
     "vm.page-cluster" = 0;
   };
 
+  services.earlyoom.enable = true;
+
 }
