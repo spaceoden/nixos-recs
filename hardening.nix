@@ -5,18 +5,10 @@
   security.sudo.enable = false;
   security.sudo-rs.enable = true;
 
-  #wayland envars
-  environment.sessionVariables = {
-    QT_QPA_PLATFORM = "wayland";
-    NIXOS_OZONE_WL = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-  };
-
   #automatically deploy updates
   system.autoUpgrade = {
     enable = true;
     randomizedDelaySec = "20min"; #adds 0-20 minutes to trigger time to stagger updates and so it doesn't run right at boot when overdue
-    operation = "boot"; #deploys update as new boot entry. use the default setting of "switch" for immediate effect.
   };
 
   #clean up old deployments
