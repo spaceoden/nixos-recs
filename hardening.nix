@@ -44,9 +44,6 @@
 
   security.virtualisation.flushL1DataCache = "always";
 
-  security.apparmor.enable = true;
-  security.apparmor.killUnconfinedConfinables = true;
-
   boot.kernelParams = [
     # Don't merge slabs
     "slab_nomerge"
